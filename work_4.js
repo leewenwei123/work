@@ -52,7 +52,7 @@ function checkID(id) {
     I: 34,
     O: 35,
   };
-
+  // console.log(cityCodes["A"]);
   if (!cityCodes[id[0]]) {
     return false;
   }
@@ -63,7 +63,7 @@ function checkID(id) {
 
   const idArray = id.split("");
   idArray.shift();
-  const weights = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1];
+  const weights = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1];
   codearr = [];
   city_code_first = Math.floor(cityCodes[id[0].toUpperCase()] / 10);
   city_code_second = cityCodes[id[0].toUpperCase()] % 10;
@@ -72,15 +72,15 @@ function checkID(id) {
   let sum = 0;
 
   for (let i = 0; i < idArray.length - 1; i++) {
-    if (idArray.length < 2) {
-    }
     if (isNaN(parseInt(idArray[i]))) {
       return false;
     }
+    // console.log("weights", weights[i]);
+    // console.log("idArray", idArray[i]);
     sum += parseInt(idArray[i]) * weights[i];
   }
 
-  const checkCode = (10 - (sum % 10)) % 10;
+  const checkCode = 10 - (sum % 10);
   const inputCheckCode = parseInt(idArray[idArray.length - 1]);
   if (checkCode !== inputCheckCode) {
     return false;

@@ -3,13 +3,9 @@
 const size = 9;
 
 for (let i = 1; i <= size; i++) {
-
-  let row = '';
-
+  let row = "";
   for (let j = 1; j <= size; j++) {
-   
-    row += (i * j).toString().padStart(2, ' ') + ' ';
+    row += `${i} x ${j} = ${i * j}\n`;
   }
-
   console.log(row);
 }
