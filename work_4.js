@@ -64,7 +64,7 @@ function checkID(id) {
   const idArray = id.split("");
   idArray.shift();
   const weights = [1, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-  codearr = [];
+  
   city_code_first = Math.floor(cityCodes[id[0].toUpperCase()] / 10);
   city_code_second = cityCodes[id[0].toUpperCase()] % 10;
   idArray.unshift(city_code_second);
